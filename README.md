@@ -57,18 +57,20 @@ Executes a command in the Windows terminal.
 
 ## Configuration
 
-To use this server with Claude Desktop or other MCP clients, add it to your MCP configuration:
+To use this server with Claude Desktop or other MCP clients, add it to your MCP configuration file located at `%APPDATA%\Claude\claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
     "windows-terminal": {
-      "command": "python",
-      "args": ["c:\\Users\\Gabriel\\git-repos\\mcp-servers\\terminal_server.py"]
+      "command": "c:\\path\\to\\mcp-servers\\venv\\Scripts\\python.exe",
+      "args": ["c:\\path\\to\\mcp-servers\\terminal_server.py"]
     }
   }
 }
 ```
+
+**Important:** Make sure to use the full path to the Python executable in your virtual environment, not just `python`. This ensures the MCP dependencies installed in your venv are available.
 
 ## Security
 
