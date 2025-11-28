@@ -64,6 +64,7 @@ async def handle_call_tool(
         # Execute command using cmd.exe on Windows
         process = await asyncio.create_subprocess_shell(
             command,
+            stdin=asyncio.subprocess.DEVNULL,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
             shell=True
